@@ -1,0 +1,14 @@
+<h1><%= @restaurant.name %></h1>
+<ul>
+  <li class="rest-address"><%= "Address: " +  @restaurant.address %></li>
+  <li class="rest-number"><%= "Phone: " +  @restaurant.phone_number %></li>
+  <li class="rest-cat"><%= "Category: " + @restaurant.category %></li>
+</ul>
+
+<%= link_to "Create a review", new_restaurant_review_path(@restaurant), class: "btn btn-primary"%>
+
+
+<ul><% @restaurant.reviews.each do |rev| %>
+  <li class="rev-content"><%= rev.content %></li>
+  <li class="rev-rating"><%= rev.rating %></li>
+    <% end %></ul>
